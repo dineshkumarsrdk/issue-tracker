@@ -1,0 +1,66 @@
+/* Styling for home page */
+body {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+#projects {
+    width: 80%;
+    margin: 3%;
+    height: 65vh;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+
+.list-group small {
+    color: green;
+}
+
+/* Styling for project details page */
+.label-badge {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0.2em;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0.5em;
+}
+.dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+}
+#issues-container {
+    width: 80%;
+    margin: 3%;
+    border-radius: 5px;
+}
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    /* background: #f1f1f1; */
+    display: none;
+}
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}

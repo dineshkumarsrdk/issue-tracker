@@ -1,0 +1,55 @@
+<div class="header">
+    <h4>Projects</h2>
+        <button class="btn btn-primary" type="button" data-bs-toggle="modal" 
+        data-bs-target="#createProject">Create project</button>
+</div>
+<div id="projects">
+    <div class="list-group">
+        <% projects.forEach(project=>{ %>
+            <a href="/project/<%= project.id %>"
+                class="list-group-item list-group-item-action list-group-item-dark flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">
+                        <%= project.title %>
+                    </h5>
+                    <small>Project owner: <%= project.owner %></small>
+                </div>
+                <p class="mb-1 text-primary">
+                    <%= project.description %>
+                </p>
+            </a>
+            <% }) %>
+    </div>
+</div>
+
+<!-- Modal for creating a new project -->
+<div class="modal fade" id="createProject" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create new project</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form" action="/new-project" method="post">
+                    <div class="mb-2">
+                        <label class="form-label my-2" for="title">Project title</label>
+                        <input required class="form-control" type="text" name="title" id="title">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label my-2" for="description">Project description</label>
+                        <textarea required class="form-control" type="text" rows="3" name="description" id="description"></textarea>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label my-2" for="owner">Project owner</label>
+                        <input required class="form-control" type="text" name="owner" id="owner">
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Create project</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
